@@ -1,0 +1,42 @@
+{
+  "guest": "Nama Tamu",
+  "event": {
+    "title": "Tasyakuran Khitan",
+    "subtitle": "Undangan",
+    "date": "2026-07-04T13:00:00",
+    "dateDisplay": "Sabtu, 04 Juli 2026",
+    "timeDisplay": "13.00 WIB - 17.00 WIB",
+    "address": "Jl. Haji Sinen, No. 38B, RT/RW 07/07, Ragunan, Pasar Minggu, Jakarta Selatan, DKI Jakarta 12550",
+    "mapsEmbed": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d485.79984527228316!2d106.82266958544648!3d-6.30148521593195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69edf3941dc385%3A0xcc0ec2e6547c53e3!2sAyam%20Geprek%20RFC!5e0!3m2!1sid!2sid!4v1782387828231!5m2!1sid!2sid",
+    "mapsLink": "https://www.google.com/maps/place/?q=-6.301689005226417,106.82267221401183"
+  },
+  "child": {
+    "name": "Arvino Xavier Faeyza",
+    "parentNames": "Putra Bapak Ade & Ibu Ida",
+    "photo": "https://i.ibb.co.com/4R1wwFbH/Gemini-Generated-Image-x2nzypx2nzypx2nz.png"
+  },
+  "gift": {
+    "bankName": "BCA",
+    "accountHolder": "Ade Hermawan",
+    "accountNumber": "5295041975",
+    "qrisImage": ""
+  },
+  "gallery": [
+    "https://i.ibb.co.com/xtwXSr1L/Gemini-Generated-Image-m2rv1qm2rv1qm2rv.png",
+    "https://i.ibb.co.com/xtwXSr1L/Gemini-Generated-Image-m2rv1qm2rv1qm2rv.png",
+    "https://i.ibb.co.com/xtwXSr1L/Gemini-Generated-Image-m2rv1qm2rv1qm2rv.png",
+    "https://i.ibb.co.com/xtwXSr1L/Gemini-Generated-Image-m2rv1qm2rv1qm2rv.png"
+  ],
+  "music": "https://assets.satumomen.com/musics/al-naseeb-mohamed-tarek.mp3",
+  "rsvpWebhook": "",
+  "greeting": {
+    "opening": "Assalamu'alaikum Wr. Wb.\nTanpa mengurangi rasa hormat kami bermaksud mengundang Bapak/Ibu/Saudara/i pada acara syukuran khitan anak kami:",
+    "closing": "Merupakan suatu kebahagiaan dan kehormatan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa.",
+    "signature": "Best regards"
+  },
+  "protocol": {
+    "title": "Health Protocol",
+    "description": "Mengingat kondisi pandemi saat ini, kami menghimbau Bapak/Ibu/Saudara/i tamu undangan agar tetap memperhatikan protokol kesehatan dalam rangka upaya pencegahan penyebaran virus Covid-19.",
+    "show": true
+  }
+}
