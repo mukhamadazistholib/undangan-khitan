@@ -406,37 +406,38 @@ async function loadData() {
     DATA = await res.json();
   } catch (e) {
     // fallback defaults
-    DATA = {
+    const DATA = {
       guest:
         new URLSearchParams(window.location.search).get("to") || "Nama Tamu",
       event: {
         title: "Tasyakuran Khitan",
-        dateDisplay: "Saturday, 24 December 2022",
-        timeDisplay: "10.00 AM - 01.00 PM",
+        dateDisplay: "Sabtu, 04 Juli 2026",
+        timeDisplay: "13.00 WIB - 17.00 WIB",
         address:
-          "Komplek Perumahan INALUM Tanjung Gading Blok B-12-16, Perkebunan Sipare-pare, Sei Suka, Batu Bara",
-        date: "2022-12-24T10:00:00",
+          "Jl. Haji Sinen, No. 38B, RT/RW 07/07, Ragunan, Pasar Minggu, Jakarta Selatan, DKI Jakarta 12550",
+        date: "2026-07-04T13:00:00",
         mapsEmbed:
-          "https://www.google.com/maps/embed/v1/place?key=AIzaSyCpV55KNPo55TuxnDFd_dR3MD0luBrN1Gc&zoom=17&q=3.318889,99.337837",
-        mapsLink: "https://www.google.com/maps/place/?q=3.318889,99.337837",
+          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d485.79984527228316!2d106.82266958544648!3d-6.30148521593195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69edf3941dc385%3A0xcc0ec2e6547c53e3!2sAyam%20Geprek%20RFC!5e0!3m2!1sid!2sid!4v1782387828231!5m2!1sid!2sid",
+        mapsLink:
+          "https://www.google.com/maps/place/?q=-6.301689005226417,106.82267221401183",
       },
       child: {
-        name: "Muhammad Rizani",
-        parentNames: "Putra Bapak Fulan & Ibu Fulanah",
+        name: "Arvino Xavier Faeyza",
+        parentNames: "Putra Bapak Ade & Ibu Ida",
         photo:
-          "https://assets.satumomen.com/images/galleries/26803-gallery-1671248679.webp",
+          "https://i.ibb.co.com/4R1wwFbH/Gemini-Generated-Image-x2nzypx2nzypx2nz.png",
       },
       gift: {
         bankName: "BCA",
-        accountHolder: "Muhammad Rizani",
-        accountNumber: "12345678",
+        accountHolder: "Ade Hermawan",
+        accountNumber: "5295041975",
         qrisImage: "",
       },
       gallery: [
-        "https://assets.satumomen.com/images/no-image.jpg",
-        "https://assets.satumomen.com/images/no-image.jpg",
-        "https://assets.satumomen.com/images/no-image.jpg",
-        "https://assets.satumomen.com/images/no-image.jpg",
+        "https://i.ibb.co.com/xtwXSr1L/Gemini-Generated-Image-m2rv1qm2rv1qm2rv.png",
+        "https://i.ibb.co.com/xtwXSr1L/Gemini-Generated-Image-m2rv1qm2rv1qm2rv.png",
+        "https://i.ibb.co.com/xtwXSr1L/Gemini-Generated-Image-m2rv1qm2rv1qm2rv.png",
+        "https://i.ibb.co.com/xtwXSr1L/Gemini-Generated-Image-m2rv1qm2rv1qm2rv.png",
       ],
       music: "https://assets.satumomen.com/musics/al-naseeb-mohamed-tarek.mp3",
       greeting: {
