@@ -785,6 +785,17 @@ function populate() {
 // ===== INIT =====
 loadData();
 
+// ── Viewport height fix untuk mobile browser (address bar show/hide) ──
+// Pakai --vh CSS variable sebagai fallback untuk browser yang belum support dvh
+function setVh() {
+  const vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty("--vh", `${vh}px`);
+}
+setVh();
+window.addEventListener("resize", setVh);
+// Juga update saat orientasi berubah
+window.addEventListener("orientationchange", () => setTimeout(setVh, 200));
+
 // Cover frame animations
 setTimeout(() => {
   document.querySelectorAll("#cover-lock .anim-down").forEach((el) => {
