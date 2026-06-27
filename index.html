@@ -600,55 +600,141 @@
     <div class="modal-overlay" id="rsvpModal">
       <div class="modal-sheet" style="position: relative">
         <button class="modal-close" onclick="closeModal('rsvpModal')">✕</button>
-        <h3 style="margin-bottom: 4px; font-size: 18px">Kirim Ucapan & RSVP</h3>
-        <p style="font-size: 12px; color: #999; margin-bottom: 16px">
-          Konfirmasi kehadiran Anda
-        </p>
-        <div class="rsvp-form" id="rsvp-form-container">
-          <label>Nama Lengkap</label>
-          <input type="text" id="rsvp-name" placeholder="Masukkan nama Anda" />
-          <label>No. HP / WhatsApp</label>
-          <input type="tel" id="rsvp-phone" placeholder="08xxxxxxxxxx" />
-          <label>Kehadiran?</label>
-          <div class="rsvp-attendance">
-            <div
-              class="attendance-option"
-              id="att-hadir"
-              onclick="selectAttendance('hadir')"
-            >
-              ✓ Hadir
-            </div>
-            <div
-              class="attendance-option"
-              id="att-tidak"
-              onclick="selectAttendance('tidak')"
-            >
-              ✗ Tidak Hadir
-            </div>
-          </div>
-          <label>Ucapan / Komentar</label>
-          <textarea
-            id="rsvp-comment"
-            rows="3"
-            placeholder="Tulis ucapan..."
-          ></textarea>
+
+        <!-- Tab Header -->
+        <div class="rsvp-tabs">
           <button
-            class="btn-primary"
-            onclick="submitRsvp()"
-            style="width: 100%; margin-top: 16px; text-align: center"
+            class="rsvp-tab active"
+            id="tab-form"
+            onclick="switchRsvpTab('form')"
           >
-            Kirim
+            ✏️ Kirim Ucapan
+          </button>
+          <button
+            class="rsvp-tab"
+            id="tab-list"
+            onclick="switchRsvpTab('list')"
+          >
+            💬 Ucapan
+            <span class="ucapan-badge" id="ucapan-badge" style="display: none"
+              >0</span
+            >
           </button>
         </div>
-        <div
-          id="rsvp-success"
-          style="display: none; text-align: center; padding: 24px 0"
-        >
-          <div style="font-size: 40px">🎉</div>
-          <h3 style="margin: 12px 0 8px">Terima Kasih!</h3>
-          <p style="color: #666; font-size: 14px">
-            Ucapan Anda telah dikirimkan. Kami menunggu kehadiran Anda.
-          </p>
+
+        <!-- TAB: FORM -->
+        <div id="rsvp-tab-form">
+          <div class="rsvp-form" id="rsvp-form-container">
+            <label>Nama</label>
+            <input type="text" id="rsvp-name" placeholder="Nama Anda" />
+
+            <label
+              >Grup
+              <span
+                id="grup-hint"
+                style="font-weight: 400; color: #aaa; font-size: 11px"
+              ></span
+            ></label>
+            <input
+              type="text"
+              id="rsvp-grup"
+              placeholder="Contoh: Keluarga, Kantor..."
+            />
+
+            <label>No WhatsApp</label>
+            <div class="phone-input-wrap">
+              <span class="phone-prefix">+62 ▾</span>
+              <input
+                type="tel"
+                id="rsvp-phone"
+                placeholder="8xxxxxxxxxx"
+                class="phone-field"
+              />
+            </div>
+
+            <label>Kehadiran</label>
+            <select id="rsvp-attendance-select">
+              <option value="">— Pilih —</option>
+              <option value="hadir">✅ Hadir</option>
+              <option value="tidak">❌ Tidak Hadir</option>
+            </select>
+
+            <label>Komentar atau Ucapan</label>
+            <textarea
+              id="rsvp-comment"
+              rows="3"
+              placeholder="Komentar atau Ucapan"
+            ></textarea>
+
+            <button
+              class="btn-primary"
+              id="rsvp-submit-btn"
+              onclick="submitRsvp()"
+              style="width: 100%; margin-top: 16px; text-align: center"
+            >
+              Kirim
+            </button>
+          </div>
+
+          <div
+            id="rsvp-success"
+            style="display: none; text-align: center; padding: 24px 0"
+          >
+            <div style="font-size: 40px">🎉</div>
+            <h3 style="margin: 12px 0 8px">Terima Kasih!</h3>
+            <p style="color: #666; font-size: 14px">
+              Ucapan Anda telah dikirimkan.
+            </p>
+            <div style="display: flex; gap: 8px; margin-top: 16px">
+              <button
+                class="btn-primary"
+                onclick="switchRsvpTab('list')"
+                style="flex: 1; font-size: 13px; padding: 10px 8px"
+              >
+                💬 Lihat Ucapan
+              </button>
+              <button
+                class="btn-primary"
+                onclick="resetRsvpForm()"
+                style="
+                  flex: 1;
+                  font-size: 13px;
+                  padding: 10px 8px;
+                  background: linear-gradient(to right, #888, #666);
+                "
+              >
+                ✏️ Kirim Lagi
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- TAB: LIST UCAPAN -->
+        <div id="rsvp-tab-list" style="display: none">
+          <div
+            id="ucapan-loading"
+            style="
+              text-align: center;
+              padding: 32px 0;
+              color: #aaa;
+              font-size: 14px;
+            "
+          >
+            Memuat ucapan...
+          </div>
+          <div
+            id="ucapan-empty"
+            style="
+              display: none;
+              text-align: center;
+              padding: 32px 0;
+              color: #aaa;
+              font-size: 14px;
+            "
+          >
+            Belum ada ucapan. Jadilah yang pertama! 🙏
+          </div>
+          <div id="ucapan-list"></div>
         </div>
       </div>
     </div>
